@@ -8,23 +8,37 @@ package com.pccasa.unipar.central.models;
  *
  * @author eduar
  */
-public class Agencia {
+public class Agencia  {
       private int id;
     private String codigo;
+    private String digito ;
     private String razaoSocial;
     private String cnpj;
     private Conta conta;
+    private Banco banco;
 
     public Agencia() {
     }
 
-    public Agencia(int id, String codigo, String razaoSocial, String cnpj, Conta conta) {
+    public Agencia(int id, String codigo, String razaoSocial, String cnpj, Conta conta, Banco banco) {
         this.id = id;
         this.codigo = codigo;
         this.razaoSocial = razaoSocial;
         this.cnpj = cnpj;
         this.conta = conta;
+        this.banco = banco;
     }
+
+   
+
+    public Banco getBanco() {
+        return banco;
+    }
+
+    public void setBanco(Banco banco) {
+        this.banco = banco;
+    }
+    
 
     public int getId() {
         return id;
@@ -66,8 +80,20 @@ public class Agencia {
         this.conta = conta;
     }
 
+    public String getDigito() {
+        return digito;
+    }
+
+    public void setDigito(String digito) {
+        this.digito = digito;
+    }
+
     @Override
     public String toString() {
-        return "Agencia{" + "id=" + id + ", codigo=" + codigo + ", razaoSocial=" + razaoSocial + ", cnpj=" + cnpj + ", conta=" + conta + '}';
+        return "Agencia{" + "id=" + id + ", codigo=" + codigo + ", digito=" + digito + ", razaoSocial=" + razaoSocial + ", cnpj=" + cnpj + ", conta=" + conta + ", banco=" + banco + '}';
     }
+
+   
+
+    
 }

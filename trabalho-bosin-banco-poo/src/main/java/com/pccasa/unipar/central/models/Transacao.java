@@ -4,6 +4,7 @@
  */
 package com.pccasa.unipar.central.models;
 
+import com.pccasa.unipar.central.enuns.TipoTransacaoEnum;
 import java.sql.Timestamp;
 
 /**
@@ -11,26 +12,28 @@ import java.sql.Timestamp;
  * @author eduar
  */
 public class Transacao extends AbstractBaseEntiny{
-      private String tipo;
+      private TipoTransacaoEnum tipo;
     private Timestamp dataHora;
     private double valor;
+      private int conta_origem;
+    private int conta_destino;
 
     public Transacao() {
     }
 
-    public Transacao(String tipo, Timestamp dataHora, double valor) {
+    public Transacao(TipoTransacaoEnum tipo, Timestamp dataHora, double valor, int conta_origem, int conta_destino) {
         this.tipo = tipo;
         this.dataHora = dataHora;
         this.valor = valor;
+        this.conta_origem = conta_origem;
+        this.conta_destino = conta_destino;
     }
 
-    public String getTipo() {
-        return tipo;
-    }
+    
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
+  
+
+   
 
     public Timestamp getDataHora() {
         return dataHora;
@@ -48,8 +51,34 @@ public class Transacao extends AbstractBaseEntiny{
         this.valor = valor;
     }
 
+    public TipoTransacaoEnum getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(TipoTransacaoEnum tipo) {
+        this.tipo = tipo;
+    }
+
+    public int getConta_origem() {
+        return conta_origem;
+    }
+
+    public void setConta_origem(int conta_origem) {
+        this.conta_origem = conta_origem;
+    }
+
+    public int getConta_destino() {
+        return conta_destino;
+    }
+
+    public void setConta_destino(int conta_destino) {
+        this.conta_destino = conta_destino;
+    }
+
     @Override
     public String toString() {
-        return "Transacao{" + "tipo=" + tipo + ", dataHora=" + dataHora + ", valor=" + valor + '}';
+        return "Transacao{" + "tipo=" + tipo + ", dataHora=" + dataHora + ", valor=" + valor + ", conta_origem=" + conta_origem + ", conta_destino=" + conta_destino + '}';
     }
+    
+
 }
