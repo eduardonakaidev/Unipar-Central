@@ -13,17 +13,28 @@ public class PessoaJuridica extends Pessoa{
     private String razaoSocial;
     private String cnaePrincipal;
     private String fantasia;
+    private Pessoa pessoa;
 
     public PessoaJuridica() {
     }
 
-    public PessoaJuridica(String cnpj, String razaoSocial, String cnaePrincipal, String fantasia) {
+    public Pessoa getPessoa() {
+        return pessoa;
+    }
+
+    public PessoaJuridica(String cnpj, String razaoSocial, String cnaePrincipal, String fantasia, Pessoa pessoa) {
         this.cnpj = cnpj;
         this.razaoSocial = razaoSocial;
         this.cnaePrincipal = cnaePrincipal;
         this.fantasia = fantasia;
+        this.pessoa = pessoa;
     }
 
+    public void setPessoa(Pessoa pessoa) {
+        this.pessoa = pessoa;
+    }
+
+    
     public String getCnpj() {
         return cnpj;
     }

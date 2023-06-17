@@ -11,16 +11,16 @@ package com.pccasa.unipar.central.models;
 public class Endereco {
      private int id;
     private String logradouro;
-    private int numero;
+    private String numero;
     private String bairro;
-    private int cep;
+    private String cep;
     private String complemento;
     private Cidade cidade;
 
     public Endereco() {
     }
 
-    public Endereco(int id, String logradouro, int numero, String bairro, int cep, String complemento, Cidade cidade) {
+    public Endereco(int id, String logradouro, String numero, String bairro, String cep, String complemento, Cidade cidade) {
         this.id = id;
         this.logradouro = logradouro;
         this.numero = numero;
@@ -29,6 +29,8 @@ public class Endereco {
         this.complemento = complemento;
         this.cidade = cidade;
     }
+
+   
 
     public int getId() {
         return id;
@@ -46,13 +48,23 @@ public class Endereco {
         this.logradouro = logradouro;
     }
 
-    public int getNumero() {
+    public String getNumero() {
         return numero;
     }
 
-    public void setNumero(int numero) {
+    public void setNumero(String numero) {
         this.numero = numero;
     }
+
+    public String getCep() {
+        return cep;
+    }
+
+    public void setCep(String cep) {
+        this.cep = cep;
+    }
+
+  
 
     public String getBairro() {
         return bairro;
@@ -62,14 +74,7 @@ public class Endereco {
         this.bairro = bairro;
     }
 
-    public int getCep() {
-        return cep;
-    }
-
-    public void setCep(int cep) {
-        this.cep = cep;
-    }
-
+   
     public String getComplemento() {
         return complemento;
     }
@@ -86,5 +91,13 @@ public class Endereco {
     @Override
     public String toString() {
         return "Endereco{" + "id=" + id + ", logradouro=" + logradouro + ", numero=" + numero + ", bairro=" + bairro + ", cep=" + cep + ", complemento=" + complemento + ", cidade=" + cidade + '}';
+    }
+
+    public void setCidade(Cidade cidade) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public void setPessoa(Pessoa pessoa) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

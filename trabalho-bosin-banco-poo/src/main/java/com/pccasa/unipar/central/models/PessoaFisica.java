@@ -13,18 +13,41 @@ import java.sql.Date;
 public class PessoaFisica extends Pessoa{
     private String nome;
     private String documento;
+    private String Cpf ;
     private String tipoPessoa;
     private Date dataDeNascimento;
+    private String Rg;
+    private Pessoa pessoa ;
 
+    public Pessoa getPessoa() {
+        return pessoa;
+    }
+
+    public void setPessoa(Pessoa pessoa) {
+        this.pessoa = pessoa;
+    }
+  
+     
     public PessoaFisica() {
     }
 
-    public PessoaFisica(String nome, String documento, String tipoPessoa, Date dataDeNascimento) {
+    public PessoaFisica(String nome, String documento, String Cpf, String tipoPessoa, Date dataDeNascimento) {
         this.nome = nome;
         this.documento = documento;
+        this.Cpf = Cpf;
         this.tipoPessoa = tipoPessoa;
         this.dataDeNascimento = dataDeNascimento;
     }
+
+    public String getRg() {
+        return Rg;
+    }
+
+    public void setRg(String Rg) {
+        this.Rg = Rg;
+    }
+
+   
 
     public String getNome() {
         return nome;
@@ -56,6 +79,14 @@ public class PessoaFisica extends Pessoa{
 
     public void setDataDeNascimento(Date dataDeNascimento) {
         this.dataDeNascimento = dataDeNascimento;
+    }
+
+    public String getCpf() {
+        return Cpf;
+    }
+
+    public void setCpf(String Cpf) {
+        this.Cpf = Cpf;
     }
 
     @Override

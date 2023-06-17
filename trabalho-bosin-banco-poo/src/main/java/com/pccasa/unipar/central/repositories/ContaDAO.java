@@ -42,7 +42,7 @@ public class ContaDAO {
                 conta.setConta(rs.getString("conta"));
                 conta.setAgencia(rs.getString("agencia"));
                 conta.setTipo(rs.getString("tipo"));
-                conta.setDigito(rs.getInt("digito"));
+                conta.setDigito(rs.getString("digito"));
                 conta.setSaldo(rs.getDouble("saldo"));
 
                 retorno.add(conta);
@@ -77,7 +77,7 @@ public class ContaDAO {
                 retorno.setConta(rs.getString("conta"));
                 retorno.setAgencia(rs.getString("agencia"));
                 retorno.setTipo(rs.getString("tipo"));
-                retorno.setDigito(rs.getInt("digito"));
+                retorno.setDigito(rs.getString("digito"));
                 retorno.setSaldo(rs.getDouble("saldo"));
             }
         } finally {
@@ -103,7 +103,7 @@ public class ContaDAO {
             pstmt.setString(2, conta.getConta());
             pstmt.setString(3, conta.getAgencia());
             pstmt.setString(4, conta.getTipo());
-            pstmt.setInt(5, conta.getDigito());
+            pstmt.setString(5, conta.getDigito());
             pstmt.setDouble(6, conta.getSaldo());
             pstmt.executeUpdate();
         } finally {
@@ -124,7 +124,7 @@ public class ContaDAO {
             pstmt.setString(1, conta.getConta());
             pstmt.setString(2, conta.getAgencia());
             pstmt.setString(3, conta.getTipo());
-            pstmt.setInt(4, conta.getDigito());
+            pstmt.setString(4, conta.getDigito());
             pstmt.setDouble(5, conta.getSaldo());
             pstmt.setInt(6, conta.getId());
             pstmt.executeUpdate();

@@ -39,9 +39,9 @@ public class EnderecoDAO {
                 Endereco endereco = new Endereco();
                 endereco.setId(rs.getInt("id"));
                 endereco.setLogradouro(rs.getString("logradouro"));
-                endereco.setNumero(rs.getInt("numero"));
+                endereco.setNumero(rs.getString("numero"));
                 endereco.setBairro(rs.getString("bairro"));
-                endereco.setCep(rs.getInt("cep"));
+                endereco.setCep(rs.getString("cep"));
                 endereco.setComplemento(rs.getString("complemento"));
 
                 retorno.add(endereco);
@@ -78,9 +78,9 @@ public class EnderecoDAO {
                 retorno = new Endereco();
                 retorno.setId(rs.getInt("id"));
                 retorno.setLogradouro(rs.getString("logradouro"));
-                retorno.setNumero(rs.getInt("numero"));
+                retorno.setNumero(rs.getString("numero"));
                 retorno.setBairro(rs.getString("bairro"));
-                retorno.setCep(rs.getInt("cep"));
+                retorno.setCep(rs.getString("cep"));
                 retorno.setComplemento(rs.getString("complemento"));
             }
 
@@ -108,7 +108,7 @@ public class EnderecoDAO {
             pstmt = conn.prepareStatement(INSERT);
             pstmt.setInt(1, endereco.getId());
             pstmt.setString(2, endereco.getLogradouro());
-            pstmt.setInt(3, endereco.getNumero());
+            pstmt.setString(3, endereco.getNumero());
             pstmt.setString(4, endereco.getBairro());
             pstmt.setString(5, String.valueOf(endereco.getCep())); // Convertendo para String
             pstmt.setString(6, endereco.getComplemento());
@@ -133,9 +133,9 @@ public class EnderecoDAO {
             conn = new DataBaseUtils().getConnection();
             pstmt = conn.prepareStatement(UPDATE);
             pstmt.setString(1, endereco.getLogradouro());
-            pstmt.setInt(2, endereco.getNumero());
+            pstmt.setString(2, endereco.getNumero());
             pstmt.setString(3, endereco.getBairro());
-            pstmt.setInt(4, endereco.getCep());
+            pstmt.setString(4, endereco.getCep());
             pstmt.setString(5, endereco.getComplemento());
             pstmt.setInt(6, endereco.getId());
 

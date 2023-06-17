@@ -79,4 +79,12 @@ public class PessoaJuridicaService {
     public void deleteByCnpj(String cnpj) throws SQLException {
         pessoaJuridicaDAO.delete(cnpj);
     }
+
+    public void delete(String cnpj) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public String findById(String cnpj) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

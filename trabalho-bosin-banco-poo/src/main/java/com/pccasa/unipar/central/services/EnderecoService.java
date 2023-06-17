@@ -4,7 +4,7 @@ import com.pccasa.unipar.central.Exceptions.CampoNaoInformadoException;
 import com.pccasa.unipar.central.Exceptions.EntidadeNaoInformadaException;
 import com.pccasa.unipar.central.Exceptions.TamanhoCampoInvalidoException;
 import com.pccasa.unipar.central.models.Endereco;
-import com.pccasa.unipar.central.models.Cidade;
+
 import com.pccasa.unipar.central.repositories.EnderecoDAO;
 
 import java.sql.SQLException;
@@ -24,9 +24,7 @@ public class EnderecoService {
             throw new TamanhoCampoInvalidoException("Logradouro", 100);
         }
 
-        if (endereco.getNumero() <= 0) {
-            throw new TamanhoCampoInvalidoException("Número", 1);
-        }
+       
 
         if (endereco.getBairro() == null || endereco.getBairro().isBlank() || endereco.getBairro().isEmpty()) {
             throw new CampoNaoInformadoException("Bairro");
@@ -36,9 +34,7 @@ public class EnderecoService {
             throw new TamanhoCampoInvalidoException("Bairro", 100);
         }
 
-        if (endereco.getCep() <= 0) {
-            throw new TamanhoCampoInvalidoException("CEP", 1);
-        }
+       
 
         if (endereco.getComplemento() != null && endereco.getComplemento().length() > 100) {
             throw new TamanhoCampoInvalidoException("Complemento", 100);

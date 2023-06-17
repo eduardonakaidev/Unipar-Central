@@ -13,7 +13,7 @@ public class Conta {
     private String conta; 
     private String agencia;
     private String tipo;
-    private int digito;
+    private String digito;
     private double saldo;
     private Pessoa pessoa;
     private Transacao transacao;
@@ -21,7 +21,7 @@ public class Conta {
     public Conta() {
     }
 
-    public Conta(int id, String conta, String agencia, String tipo, int digito, double saldo, Pessoa pessoa, Transacao transacao) {
+    public Conta(int id, String conta, String agencia, String tipo, String digito, double saldo, Pessoa pessoa, Transacao transacao) {
         this.id = id;
         this.conta = conta;
         this.agencia = agencia;
@@ -64,11 +64,11 @@ public class Conta {
         this.tipo = tipo;
     }
 
-    public int getDigito() {
+    public String getDigito() {
         return digito;
     }
 
-    public void setDigito(int digito) {
+    public void setDigito(String digito) {
         this.digito = digito;
     }
 
@@ -99,5 +99,9 @@ public class Conta {
     @Override
     public String toString() {
         return "Conta{" + "id=" + id + ", conta=" + conta + ", agencia=" + agencia + ", tipo=" + tipo + ", digito=" + digito + ", saldo=" + saldo + ", pessoa=" + pessoa + ", transacao=" + transacao + '}';
+    }
+
+    public void setAgencia(Agencia agencia) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
